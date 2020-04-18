@@ -40,7 +40,15 @@ public class TemplateRule {
      * List[] ,优惠券的唯一编码
      */
     private String weight;
-    
+
+    public Boolean validata(){
+
+        return expiration.validate()
+                && discount.validata()
+                &&  limittation > 0
+                && StringUtils.isNotEmpty(weight)
+                &&  usage.validata();
+    }
     /**
      * 有效期限规则
      */
